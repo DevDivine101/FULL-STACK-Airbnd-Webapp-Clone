@@ -2,7 +2,7 @@ import React from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { BiDollar } from "react-icons/bi";
 
-interface iInputProps {
+interface InputProps {
   id: string;
   label: string;
   type?: string;
@@ -13,10 +13,10 @@ interface iInputProps {
   errors: FieldErrors;
 }
 
-const Input: React.FC<iInputProps> = ({
+const Input: React.FC<InputProps> = ({
   id,
   label,
-  // type = "text",
+  type = "text",
   disabled,
   formatPrice,
   required,
@@ -35,9 +35,9 @@ const Input: React.FC<iInputProps> = ({
         />
       )}
       <input
-        // type="text"
         id={id}
         disabled={disabled}
+        type={type}
         {...register(id, { required })}
         className={`      peer
       h-[55px]
@@ -65,7 +65,6 @@ const Input: React.FC<iInputProps> = ({
       z-10
       text-md
       text-sm
-    
       duration-150
       transform
       -translate-y-3
@@ -75,7 +74,6 @@ const Input: React.FC<iInputProps> = ({
       peer-placeholder-shown:translate-y-0
       peer-focus:scale-75
       peer-focus:-translate-y-4
-      
       `}
       >
         {label}

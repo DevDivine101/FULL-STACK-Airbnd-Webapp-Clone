@@ -4,17 +4,17 @@ import axios from "axios";
 import { AiFillGithub } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { useCallback, useState } from "react";
-import { FieldValues, SumbmitHandle, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Input from "../Input";
 import Button from "../Button";
-import useLoginModal from "../hooks/useLoginModal";
-import useRegisterModal from "../hooks/useRegisterModel";
+
+import useRegisterModal from "@/app/hooks/useRegisterModel";
+import { toast } from "react-hot-toast";
 
 const RegisterModal = () => {
-  const loginModal = useLoginModal();
   const registerModal = useRegisterModal();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -31,15 +31,16 @@ const RegisterModal = () => {
     },
   });
 
-  const onSubmit: SumbmitHandle<FieldValues> = (data: any) => {
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     axios
       .post("/api/register", data)
       .then(() => {
-        loginModal.onClose();
+        registerModal.onClose();
       })
       .catch((error) => {
         console.log(error);
+        toast.error("Something went Wrong");
       })
       .finally(() => {
         setIsLoading(false);
@@ -108,7 +109,7 @@ const RegisterModal = () => {
             Already have an account
           </div>
           <div
-            onClick={loginModal.onOpen!}
+            // onClick={loginModal.onOpen!}
             className="
     text-neutral-800
     cursor-pointer
