@@ -1,36 +1,44 @@
-'use client'
-import Container from "../Container"
-import Logo from "./Logo"
-import Search from "./Search"
-import UserMenu from "./UserMenu"
+"use client";
+import Container from "../Container";
+import Logo from "./Logo";
+import Search from "./Search";
+import UserMenu from "./UserMenu";
 
 const Navbar = () => {
   return (
-    <div className="
+    <div
+      className="
      fixed
      w-full 
      z-10 
      shadow-md 
-     bg-white">
-        <div className="
+     bg-white"
+    >
+      <div
+        className="
         py-4
-        border-b-[1px]">
-            <Container>
-            <div className="
+        border-b-[1px]"
+      >
+        <Container>
+          <div
+            className="
             flex
             flex-row
             items-center
             justify-between
             gap-3
-            md:gap-0">
-<Logo/>
-<div className="max-sm:w-full"><Search/></div>
-<UserMenu/>
+            md:gap-0"
+          >
+            <Logo />
+            <div className="max-sm:w-full">
+              <Search />
             </div>
-            </Container>
-        </div>
+            <UserMenu />
+          </div>
+        </Container>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

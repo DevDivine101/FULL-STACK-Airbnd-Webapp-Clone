@@ -4,9 +4,11 @@ import Avatar from "../Avatar";
 import { useCallback, useState } from "react";
 import Menuitem from "./Menuitem";
 import useRegisterModal from "@/app/hooks/useRegisterModel";
+import useLoginModal from "@/app/hooks/useLoginModel";
 
 const UserMenu = () => {
   const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleOpen = useCallback(() => {
@@ -66,7 +68,7 @@ md:block"
           className="
             absolute
             rounded-xl
-            shadow-md
+            shadow-md1`
             w-[30%]
             md:w-sm
             bg-[#ffff]
@@ -81,8 +83,11 @@ md:block"
                 cursor-pointer"
           >
             <>
-              <Menuitem onClick={() => ({})} label="Log In" />
+              <Menuitem onClick={loginModal.onOpen} label="Log In" />
               <Menuitem onClick={registerModal.onOpen} label="Sign Up" />
+              <Menuitem onClick={() => {}} label="Room" />
+              <Menuitem onClick={() => {}} label="Listing" />
+              <Menuitem onClick={() => {}} label="Reservation" />
             </>
           </div>
         </div>
