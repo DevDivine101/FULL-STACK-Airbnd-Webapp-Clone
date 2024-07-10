@@ -1,5 +1,5 @@
 import React from "react";
-("use clinet");
+("use client");
 interface HandingProps {
   title?: string;
   subtitle?: string;
