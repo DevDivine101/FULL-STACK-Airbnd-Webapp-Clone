@@ -13,7 +13,7 @@ const Container: React.FC<navProps> = ({ children }) => {
     xl:px-10
     md:px-10
     sm:px-2
-    px-4"
+    px-4 bg-[]"
     >
       {children}
     </div>

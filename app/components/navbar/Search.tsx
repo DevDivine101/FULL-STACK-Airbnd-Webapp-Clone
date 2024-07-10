@@ -1,4 +1,4 @@
-'use clinet'
+'use client'
 import {BiSearch} from 'react-icons/bi'
 
 const Search = () => {
@@ -13,6 +13,7 @@ const Search = () => {
     hover:shadow-md
     transition
     cursor-pointer
+    bg-[#fff]
       '>
 <div className='
 flex
