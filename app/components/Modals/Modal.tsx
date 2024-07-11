@@ -59,7 +59,7 @@ import Button from "../Button";
 interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
-  onSumbit: () => void;
+  onSubmit: () => void;
   title?: string;
   body?: React.ReactElement;
   footer?: React.ReactElement;
@@ -72,7 +72,7 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({
   isOpen,
   onClose,
-  onSumbit,
+  onSubmit,
   title,
   body,
   footer,
@@ -97,13 +97,13 @@ const Modal: React.FC<ModalProps> = ({
     }, 300);
   }, [disabled, onClose]);
 
-  const handleSumbit = useCallback(() => {
+  const handleSubmit = useCallback(() => {
     if (disabled) {
       return;
     }
 
-    onSumbit();
-  }, [disabled, onSumbit]);
+    onSubmit();
+  }, [disabled, onSubmit]);
 
   const handlesecondaryAction = useCallback(() => {
     if (disabled || !secondaryAction) {
@@ -240,7 +240,7 @@ flex-col"
                   <Button
                     disabled={disabled}
                     label={actionLabel}
-                    onClick={handleSumbit}
+                    onClick={handleSubmit}
                   />
                 </div>
                 {footer}

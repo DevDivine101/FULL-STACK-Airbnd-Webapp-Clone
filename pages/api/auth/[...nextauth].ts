@@ -16,10 +16,10 @@ export const authOptions: AuthOptions = {
     }),
     GoogleProvider({
       clientId: process.env.Google_CLIENT_ID as string,
-      clientSecret: process.env.Google_CLINET_SECRET as string
+      clientSecret: process.env.Google_CLIENT_SECRET as string
     }),
     CredentialsProvider({
-      name:'credentals',
+      name:'credentials',
       credentials: {
         email: {label:'email', type: 'text'},
         password: {label: 'password', type: 'password'},
